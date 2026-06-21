@@ -3,7 +3,7 @@ set -e
 
 BUCKET="ryanperkins-site"
 REGION="eu-west-2"
-CLOUDFRONT_ID=""  # paste your CloudFront distribution ID here
+CLOUDFRONT_ID="E6SQD0QEW2ND3"
 
 echo "Deploying to s3://$BUCKET/..."
 aws s3 sync "$(dirname "$0")/../" s3://$BUCKET/ \
