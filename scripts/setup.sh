@@ -12,7 +12,7 @@ set -e
 BUCKET="ryanperkins-site"
 REGION="eu-west-2"
 DOMAIN="ryanperkins.dev"
-CERT_ARN="arn:aws:acm:us-east-1:207567758520:certificate/fb536bd2-cbee-4f1c-b1fa-29645ba333d3"
+CERT_ARN="arn:aws:acm:us-east-1:207567758520:certificate/be5b0675-b488-4431-9855-e519acea4285"
 
 if [ -z "$CERT_ARN" ]; then
   echo "Error: set CERT_ARN to your ACM certificate ARN before running setup."
@@ -47,7 +47,7 @@ aws s3api put-bucket-policy \
     }]
   }"
 
-ORIGIN="$BUCKET.s3-website-$REGION.amazonaws.com"
+ORIGIN="$BUCKET.s3-website.$REGION.amazonaws.com"
 
 echo "Creating CloudFront distribution..."
 DISTRIBUTION=$(aws cloudfront create-distribution \
